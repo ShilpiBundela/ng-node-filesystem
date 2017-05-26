@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <link href="./assets/bundle.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <table id="example" class="display">
+      <th>ICON</th>
+      <th ng-click="orderByMe('name')">NAME</th>
+      <th>IS FOLDER</th>
+      <th ng-click="orderByMe('size')">SIZE</th>
+      <th>MODIFIED</th>
+      <th>ACTION</th>
+      <tbody>
+        <tr ng:repeat="i in fileData | orderBy:myOrderBy" ng-mouseover="open = true" ng-mouseleave="open = false">
+          <td ng-click="openDirectory(i.name)">
+            <img ng-src="{{statusIconMapping[i.isFolder]}}"/>
+          </td>
+          <td>
+            <span data-ng-hide="editMode" ng-click="openDirectory(i.name)">{{i.name}}</span>
+            <input type="text" data-ng-show="editMode" data-ng-model="i.name" data-ng-required />
+          </td>
+          <td ng-click="openDirectory(i.name)">{{i.isFolder}}</td>
+          <td ng-click="openDirectory(i.name)">{{i.size}}</td>
+          <td ng-click="openDirectory(i.name)">{{i.modified}}</td>
+          <td>
+            <button ng-click="Delete($index, i.name)" ng-show="open && i.name !== '.' && i.name !== '..'">Delete </button></br>
+            <button ng-show="open && i.name !== '.' && i.name !== '..'" type="submit" data-ng-hide="!editMode"
+                    data-ng-click="editMode = true;editAppKey(i.name)"
+                    class="btn btn-default">Edit</button></br>
+            <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; saveName(i.name)" class="btn btn-default">Save</button></br>
+            <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="btn btn-default">Cancel</button></td>
+        </tr>
+      </tbody>
+      </tr>
+    </table>
+  </div>
+  <script src="./assets/bundle.js" type="text/javascript"></script>
+</body>
+
+</html>

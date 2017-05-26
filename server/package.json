@@ -1,0 +1,22 @@
+{
+  "name": "node_client_server",
+  "version": "1.0.0",
+  "description": "a simple file transfer client and server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bundela, Shilpi <bundela.s@husky.neu.edu>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "q": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

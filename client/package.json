@@ -1,0 +1,18 @@
+{
+  "name": "client-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "test"
+  },
+  "author": "Bundela, Shilpi <bundela.s@husky.neu.edu>",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "angular-ui-grid": "^4.0.4"
+  }
+}
