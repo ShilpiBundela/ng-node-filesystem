@@ -4,7 +4,7 @@
 * Nodejs - __[NodeJs](https://nodejs.org/en/)__
 ```
 node -v -> should be greater than 6.5.0
-npm -v -> should be greater than 3.1.1
+npm -v -> should be greater than 3.10.10
 ```
 
 * optional - __[NVM](https://github.com/creationix/nvm)__
